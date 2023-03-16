@@ -1,9 +1,12 @@
-H,M = map(int, input().split())
+H, M = map(int, input().split())
 
-minutes = H*60 + M
-minutes -= 45
+minutes = H*60+M - 45
 
 h = minutes//60
-m = minutes%60
+m = abs(minutes)%60
 
-print(abs(h), m)
+if minutes < 0:
+    h = 23
+
+print(h, m)
+
