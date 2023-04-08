@@ -14,3 +14,4 @@ while i <= 7 and n>0:
     i += 1
 
 print(ans)
+

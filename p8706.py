@@ -1,15 +1,10 @@
 s = input()
 
-res = ''
-i = 0
-while i<len(s):
-    if i+1 < len(s) and '1' <= s[i+1] <= '9':
-        repeating_sequence = s[i]*int(s[i+1])
-        res += repeating_sequence
-        i += 1
-    elif i+1 <= len(s):
-        res += s[i]
+ans = ''
+for i in range(len(s)):
+    if '1' <= s[i] <= '9':
+        ans += s[i-1] * (int(s[i])-1)
     else:
-        break
-    i += 1
-print(res)
+        ans += s[i]
+
+print(ans)
