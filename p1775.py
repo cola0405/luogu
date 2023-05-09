@@ -18,6 +18,3 @@ for length in range(2, n+1):
             dp[i][j] = min(new_val, dp[i][j])
 
 print(dp[1][n])
-
-
-
