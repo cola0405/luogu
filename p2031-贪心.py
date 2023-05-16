@@ -1,24 +1,21 @@
-# 有则马上取 —— 贪心
+# 贪心
 # 如果有剩余，则合并倒数第一个字串就行
-s = input().strip()     # emm。。数据有问题，得要strip
+s = input().strip()
 n = int(input())
-d = [input().strip() for _ in range(n)]
 
-ans = 0
-t = ''
-for i in range(len(s)):
-    t += s[i]
-    for item in d:
-        if item in t:
-            ans += 1
-            t = ''
+words = [input().strip() for _ in range(n)]
+# 不进行排序不会有问题，因为不会错过
+# 但是排序后效率相对会更高
+# words.sort(key=lambda item: len(item))
+
+count = 0
+cur = ''
+for c in s:
+    cur += c
+    for word in words:
+        if word in cur:
+            count += 1
+            cur = ''
             break
 
-print(ans)
-
-"""
-asdsd
-2
-a
-ds
-"""
+print(count)
